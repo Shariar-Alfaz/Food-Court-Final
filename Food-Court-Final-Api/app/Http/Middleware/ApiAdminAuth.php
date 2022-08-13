@@ -26,8 +26,8 @@ class ApiAdminAuth
                 if( $key->rule == 'admin' && $key->userid != null)
                     return $next($request);
             }
-            return response()->json(["msg"=>"Supplied Token is invalid or expired"]);
+            return response()->json(["msg"=>"Supplied Token is invalid or expired"],401);
         }
-        return response()->json(["msg"=>"No token supplied"]);
+        return response()->json(["msg"=>"No token supplied"],401);
     }
 }

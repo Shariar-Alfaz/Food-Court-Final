@@ -94,10 +94,10 @@ class RegistrationAndLoginApiController extends Controller
                     return response()->json(["token"=>$key,"rule"=>"admin"],200);
             }
             else{
-                return response()->json(['lerr'=>'Email or password not match']);
+                return response()->json(['lerr'=>'Email or password not match'],404);
             }
         }catch(Exception $e){
-            return response()->json(['lerr','Email or password not match']);
+            return response()->json(['lerr','Email or password not match'],404);
         }
     }
 }

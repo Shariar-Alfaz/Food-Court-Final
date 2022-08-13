@@ -1,0 +1,346 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #FD9899;
+}
+
+.full {
+    background-color: #FD9899;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    width: 100%;
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: #FD9899;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #FD9899;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: inherit;
+}
+
+.topnav a:nth-child(4) {
+    float: right;
+}
+
+@media screen and (max-width: 900px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+.header-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.left img {
+    object-fit: cover;
+}
+
+.right h1 {
+    color: white;
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #FD9899;
+    position: sticky;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.under-section {
+    background-color: white;
+}
+
+.underflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text p {
+    color: #561950;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.button a {
+    display: block;
+    text-decoration: none;
+    padding: 14px 16px;
+    border: 2px solid #EE494A;
+    color: #EE494A;
+    font-weight: bold;
+    transition-duration: 0.4s;
+}
+
+.button a:hover {
+    background-color: #EE494A;
+    color: white;
+}
+
+.image-holder-sec1 {
+    background-image: url(../../Image/pexels-pixabay-326279.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.black {
+    position: relative;
+}
+
+.slogans {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.274);
+    height: inherit;
+}
+
+.positioning {
+    position: relative;
+    top: 74%;
+}
+
+.positioning h1 {
+    position: relative;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 6rem;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+}
+
+.positioning h1:before {
+    content: 'Take a bite out of hunger.';
+    animation: text ease-in 25s infinite;
+}
+
+@keyframes text {
+    20% {
+        content: 'Book it to our food drive.';
+    }
+    40% {
+        content: 'Taste the best of Town.';
+    }
+    60% {
+        content: 'Add a joy of best Taste.';
+    }
+    80% {
+        content: 'Mouth watering Hot Recipes.';
+    }
+}
+
+.about-us p {
+    color: rgb(90, 90, 90);
+}
+
+#read-more-btn {
+    background-color: transparent;
+    color: rgb(90, 90, 90);
+    border: none;
+    font-size: inherit;
+    width: 100%;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: 0.4s;
+}
+
+#read-more-btn:hover {
+    background-color: rgb(231, 231, 231);
+}
+
+.hr {
+    color: rgb(233, 233, 233);
+    border: 1px solid;
+}
+
+#more {
+    
+    transition: all 0.5s;
+}
+
+#contact {
+    background-color: #FD9899;
+    color: white;
+    text-align: center;
+    height: 30px;
+}
+
+.footer-flex {
+    display: flex;
+    color: white;
+}
+
+.center {
+    align-items: center;
+}
+
+.far {
+    font-size: 35px;
+    padding-right: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.wrapper .button {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+}
+
+.wrapper .button:hover {
+    width: 200px;
+}
+
+.wrapper .button .icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.button:nth-child(1) {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+    background: #4267B2;
+}
+
+.wrapper .button:nth-child(2):hover .icon {
+    background: #1DA1F2;
+}
+
+.wrapper .button:nth-child(3):hover .icon {
+    background: #E1306C;
+}
+
+.wrapper .button .icon i {
+    font-size: 25px;
+    line-height: 60px;
+    color: black;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+    color: #fff;
+}
+
+.wrapper .button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:nth-child(1) span {
+    color: #4267B2;
+}
+
+.wrapper .button:nth-child(2) span {
+    color: #1DA1F2;
+}
+
+.wrapper .button:nth-child(3) span {
+    color: #E1306C;
+}
+
+.lastSpace {
+    height: 30px;
+}
+
+.first-item {
+    margin-right: 15%;
+}
+
+@media screen and (max-width: 900px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .left img {
+        width: 200px;
+        height: 200px;
+    }
+    .right h1 {
+        font-size: 3rem;
+    }
+    .positioning h1 {
+        font-size: 4rem;
+    }
+}
