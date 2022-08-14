@@ -1,5 +1,14 @@
 import pic from '../Image/logo.png'
+import  Axios  from '../axiosConfig'
 const Nav = ()=>{
+    const logout = (e)=>{
+        Axios.get('/admin/logout').then((rsp)=>{
+            localStorage.clear();
+            window.location.href('/');
+        },(err)=>{
+
+        });
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
@@ -30,7 +39,7 @@ const Nav = ()=>{
                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                        
                         <li>
-                            <a className="dropdown-item" href="">Logout</a>
+                            <button className="dropdown-item" onClick={e=>logout(e)}>Logout</button>
                         </li>
                     </ul>
                 </div>

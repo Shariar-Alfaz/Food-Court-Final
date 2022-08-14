@@ -6,8 +6,8 @@ import './Css/login.css'
 const LoginForm = () =>{
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-    const [errs,setErrs] = useState("");
-    const [msg,setMsg] = useState("");
+    var [errs,setErrs] = useState("");
+    var [msg,setMsg] = useState("");
     const handleSubmit =async (e) =>{
         e.preventDefault();
         var data  = {email:email,password:password};

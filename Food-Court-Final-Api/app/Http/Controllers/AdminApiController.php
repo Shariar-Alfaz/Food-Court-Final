@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Admin;
 use App\Models\Restaurant;
 use App\Models\Token;
+use App\Models\Food;
+use App\Models\Ratings;
+use App\Models\Order;
 use Datetime;
 
 class AdminApiController extends Controller
@@ -81,4 +84,41 @@ class AdminApiController extends Controller
             return response()->json(['msg'=>'Unblocked']);
         }
     }
+    public function getRestaurantApproval()
+    {
+        $restaurant = Restaurant::where('status',0)->get();
+        return response()->json(['approval'=>$restaurant]);
+    }
+    public function getRestaurants()
+    {
+        $restaurant = Restaurant::where('status',"!=",0)->get();
+        $restaurants = array();
+        foreach($restaurant as $r){
+            $sum=0;
+            $avg=0;
+            $count =count($r->Ratings);
+            $food = count($r->Foods);
+            $order = count($r->Orders);
+
+            if($count!=0){
+                foreach($r->Ratings as $rt){
+                    $sum+=$rt->ratings;
+                }
+            $avg =$sum/$count;
+            }
+            $obj = new Restaurant();
+            $obj->id = $r->id;
+            $obj->name = $r->name;
+            $obj->email = $r->email;
+            $obj->status = $r->status;
+            $obj->address = $r->address;
+            $obj->contact_number = $r->contact_number;
+            $obj->logo = $r->logo;
+            $obj->order = $order;
+            $obj->food = $food;
+            $obj->ratings = $avg;
+            array_push($restaurants,$obj);
+    }
+    return response()->json(['res'=>$restaurants]);
+}
 }

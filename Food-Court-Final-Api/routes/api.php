@@ -40,4 +40,6 @@ Route::group(['middleware'=>['apiAdminAuth']],function(){
     Route::get('/admin/logout',[AdminApiController::class,'logout']);
     Route::get('/admin/status/change/{add}/{status}',[AdminApiController::class,'change']);
     Route::get('/admin/status/change/customer/{cid}/{status}',[AdminApiController::class,'changeCus']);
+    Route::get('/admin/getRestaurant/approval',[AdminApiController::class,'getRestaurantApproval']);
+    Route::get('/admin/getRestaurants',[AdminApiController::class,'getRestaurants']);
 });
