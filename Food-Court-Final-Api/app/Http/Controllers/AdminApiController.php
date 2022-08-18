@@ -10,33 +10,23 @@ use App\Models\Token;
 use App\Models\Food;
 use App\Models\Ratings;
 use App\Models\Order;
+use App\Models\Customer;
 use Datetime;
 
 class AdminApiController extends Controller
 {
     public function createAdmin(Request $req)
     {
-        $validator = Validator::make($req->all(),[
-            'name'=> 'required|max:50|regex:/^[a-zA-Z .-]*$/',
-            'email'=>'required|email',
-            'password'=>'required|min:3|max:50',
-            'con_password'=>'same:password',
-        ],[
-            "name.regex"=>"Only letters, '.' and '-' supported.",
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors(),422);
-        }
         $admin = new Admin();
         $admin->name = $req->name;
         $admin->email = $req->email;
-        $admin->password = mad5($req->password);
+        $admin->password = md5($req->password);
         $admin->rule = 'admin';
         try{
             $admin->save();
-            return response()->json(['msg'=>'Account created.']);
+            return response()->json(['msg'=>'Account created.'],201);
         }catch(\Illuminate\Database\QueryException $ex){
-            return response()->json(['err'=>'This email already used.']);
+            return response()->json(['err'=>'This email already used.'],422);
         }
         
     }
@@ -118,7 +108,27 @@ class AdminApiController extends Controller
             $obj->food = $food;
             $obj->ratings = $avg;
             array_push($restaurants,$obj);
+        }
+        return response()->json(['res'=>$restaurants]);
     }
-    return response()->json(['res'=>$restaurants]);
-}
+    public function getCustomers()
+    {
+        $customers= Customer::all();
+        $data = array();
+        foreach($customers as $c){
+            $tOrders = count($c->Orders);
+            $cus = new Customer();
+            $cus->id=$c->id;
+            $cus->name=$c->name;
+            $cus->contact_number=$c->contact_number;
+            $cus->address=$c->address;
+            $cus->email=$c->email;
+            $cus->gender=$c->gender;
+            $cus->orders=$tOrders;
+            $cus->status = $c->status;
+            array_push($data,$cus);
+        }
+        return response()->json(['customers'=>$data]);
+    }
+    
 }

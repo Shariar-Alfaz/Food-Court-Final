@@ -24,7 +24,10 @@ const Nav = ()=>{
                 </a>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Dashboard</a>
+                        <a className="nav-link" href="/admin/dashbord">Dashboard</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/add/admin">Add admin</a>
                     </li>
                    
                 </ul>

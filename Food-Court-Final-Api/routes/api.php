@@ -42,4 +42,6 @@ Route::group(['middleware'=>['apiAdminAuth']],function(){
     Route::get('/admin/status/change/customer/{cid}/{status}',[AdminApiController::class,'changeCus']);
     Route::get('/admin/getRestaurant/approval',[AdminApiController::class,'getRestaurantApproval']);
     Route::get('/admin/getRestaurants',[AdminApiController::class,'getRestaurants']);
+    Route::get('/admin/customers',[AdminApiController::class,'getCustomers']);
+    
 });
