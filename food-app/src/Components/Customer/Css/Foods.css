@@ -1,0 +1,231 @@
+
+#image {
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 0;
+    height: 150px;
+    width: 150px;
+}
+
+#name {
+    color: white;
+    font-size: 2rem;
+}
+
+#info {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    background-color: #FD9899;
+    padding: 50px;
+}
+
+.dev {
+    margin-left: 60px;
+    height: 150px;
+    width: 1px;
+    background-color: white;
+}
+
+.food-search h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: 4.5rem;
+    color: rgb(201, 201, 201);
+    text-align: center
+}
+
+.search-bar {
+    margin: 0 auto;
+}
+
+#category-btn {
+    background-color: #FD9899;
+}
+
+#category-btn i {
+    color: white;
+}
+
+#category-btn:active {
+    background-color: #d17c7d;
+}
+
+#category-list {
+    display: block;
+}
+
+.flex-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.flex-category a {
+    text-decoration: none;
+    background-color: #E1306C;
+    color: white;
+    padding: 10px 20px;
+    margin: 7px;
+}
+
+.flex-category a:hover {
+    transform: scale(1.05);
+}
+
+#category-list h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#h3cen {
+    text-align: center;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+#modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#modal-close-btn,
+#m2close {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    color: rgb(182, 182, 182);
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.4s;
+    font-weight: bolder;
+}
+
+#modal-close-btn:hover,
+#m2close:hover {
+    color: black;
+}
+
+#modal-content-img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+#description {
+    color: rgb(126, 126, 126);
+}
+
+#details {
+    height: 100px;
+    width: 300px;
+    resize: none;
+    overflow: scroll;
+    outline: none;
+    border: 2px solid #eee;
+    font-family: inherit;
+}
+
+#add-to-cart {
+    background: #E1306C;
+    color: white;
+    padding: 20px 60px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+#add-to-cart:hover {
+    transform: scale(1.03);
+}
+
+#modal-close-btn-2 {
+    background: rgb(207, 48, 48);
+    color: white;
+    padding: 20px 25px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#modal-close-btn-2:hover {
+    transform: scale(1.03);
+}
+
+hr {
+    border-top: 1px solid rgb(201, 201, 201);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+#quantity {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    text-align: center;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+#error-message {
+    display: none;
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.158);
+    color: red;
+    padding: 10px;
+}
+
+#m2content {
+    padding: 50px;
+    background-color: #E1306C;
+    margin: 20% auto;
+    width: 700px;
+}
+
+#modalnotifi {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+#m2message {
+    color: white;
+}
+
+@media screen and (max-width:900px) {
+    .food-search h1 {
+        font-size: 4rem;
+    }
+}

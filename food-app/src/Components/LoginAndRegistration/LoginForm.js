@@ -16,6 +16,9 @@ const LoginForm = () =>{
                 if(succ.data.rule == 'admin'){
                     localStorage.setItem('_authToken',succ.data.token);
                 window.location.href = '/admin/dashbord';
+                }else if(succ.data.rule == 'customer'){
+                    localStorage.setItem('_authToken',succ.data.token);
+                window.location.href = '/customer/dashbord';
                 }
             }
             

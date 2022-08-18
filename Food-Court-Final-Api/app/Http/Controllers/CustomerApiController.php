@@ -40,21 +40,28 @@ class CustomerApiController extends Controller
         }
         else{
             $restaurants= Restaurant::where('status',1)->get();
-            $ratingsTotal = array();
+            $upRes = array();
             foreach($restaurants as $r){
                 $sum=0;
-                $count = count($r->Ratings);
-                if($count !=0){
-                    foreach($r->Ratings as $r){
-                        $sum+=$r->ratings;
+                $avg =0;
+                $count=count($r->Ratings);
+                    foreach($r->Ratings as $re){
+                        $sum+=$re->ratings;
                     }
-                    $avg = $sum/$count;
-                    array_push($ratingsTotal,$avg);
-                }else{
-                    array_push($ratingsTotal,0.00);
-                }
+                    if($count!=0){
+                        $avg = $sum/$count;
+                    }
+                    $res = new Restaurant();
+                    $res->name = $r->name;
+                    $res->email = $r->email;
+                    $res->contact_number = $r->contact_number;
+                    $res->logo = $r->logo;
+                    $res->address = $r->address;
+                    $res->id = $r->id;
+                    $res->ratings = $avg;
+                    array_push($upRes,$res);
             }
-            return response()->json(['restaurants'=>$restaurants,'ratings'=>$ratingsTotal]);
+            return response()->json(['restaurants'=>$upRes]);
         }
     }
     public function getCustomer(Request $req)
@@ -69,7 +76,8 @@ class CustomerApiController extends Controller
     }
     public function searchRestaurant($name)
     {
-        return Restaurant::where('name','like','%'.$name.'%')->where('status',1)->get();
+        $res = Restaurant::where('name','like','%'.$name.'%')->where('status',1)->get();
+        return response()->json(['res'=>$res]);
     }
     public function getFoodItem($id)
     {
