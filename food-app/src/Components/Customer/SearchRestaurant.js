@@ -64,7 +64,7 @@ const SearchRestaurants = ()=>{
         <div id="restaurant-container">
             {
                 restaurant.map((r)=>(
-                    <div>
+                    <div key='r.id'>
                             <a href={"/customer/restaurant/"+r.id}  className="card">
                                 <img src={'http://localhost:8000/'+r.logo.replace('../','')} style={{height:'200px'}}/>
                                 <div className="border">

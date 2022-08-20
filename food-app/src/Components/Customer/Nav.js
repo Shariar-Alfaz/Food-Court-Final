@@ -14,7 +14,7 @@ const Nav = ()=>{
                         <a href="/customer/dashbord"><i className="fas fa-house-user"></i> Home</a>
                         <a href="" className="show-cart"><i className="fas fa-cart-arrow-down"></i> Cart </a>
                         <a href=""><i className="fas fa-list"></i> My orders</a>
-                        <a href="" onclick="logout()"><i className="fas fa-user-alt-slash"></i> Logout</a>
+                        <a href=""><i className="fas fa-user-alt-slash"></i> Logout</a>
                     </div>
                 </div>
             </div>

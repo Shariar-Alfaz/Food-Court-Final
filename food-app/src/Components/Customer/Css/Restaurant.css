@@ -250,3 +250,10 @@ footer p {
     color: white;
 }
 
+.block{
+    display: block;
+}
+
+.none{
+    display: none;
+}

@@ -2,7 +2,7 @@ import Logo from '../Image/logo.png'
 const BodySection = () =>{
     return(
         <>
-         <header>
+         <header style={{backgroundColor:'#FD9899'}}>
         <div className="header-flex-container">
             <div className="left">
                 <img src={Logo} height="350" width="350"/>

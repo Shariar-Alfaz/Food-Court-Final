@@ -1,0 +1,59 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.foodcard {
+    height: 120px;
+    width: 550px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 10px;
+    row-gap: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+}
+
+.foodcard-img {
+    margin-left: auto;
+    height: 100px;
+    width: 100px;
+}
+
+.item-name {
+    margin: 0;
+    padding: 0;
+}
+
+.item-description {
+    font-size: 0.85rem;
+    color: rgb(126, 126, 126);
+    margin-top: 2px;
+}
+
+.item-price {
+    font-weight: bolder;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+}
+
+.foodcard:hover {
+    transform: scale(1.05);
+}
+
+.foodcard div:nth-child(2) {
+    margin-left: auto;
+}
+
+.hole {
+    width: 100%;
+}

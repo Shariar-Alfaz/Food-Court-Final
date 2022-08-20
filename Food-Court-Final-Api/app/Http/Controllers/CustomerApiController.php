@@ -19,6 +19,7 @@ class CustomerApiController extends Controller
     public function getAllRestaurant($id = null)
     {
         if($id){
+            
             $foods=Food::where('vendor_id',$id)->orderby('category')->get();
             $restaurnt = Restaurant::where("id",$id)->where("status",1)->first();
             $ratings = Ratings::where('vendor_id',$id)->orderBy('datetime','ASC')->get();
@@ -72,7 +73,8 @@ class CustomerApiController extends Controller
     }
     public function getCategory($id)
     {
-        return Food::where('vendor_id',$id)->select('category')->distinct()->get();
+        $cat = Food::where('vendor_id',$id)->select('category')->distinct()->get();
+        return response()->json(['cat'=>$cat]);
     }
     public function searchRestaurant($name)
     {
@@ -119,22 +121,32 @@ class CustomerApiController extends Controller
     }
     public function restaurantRating(Request $req)
     {
-        $validator = Validator::make($req->all(),[
-            'comment'=>'regex:/^[a-zA-Z0-9 .,%"-]*$/',
-            'ratings'=>'required'
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors(),422);
-        }
         $key = $req->header('Authorization');
         $customer = Token::where('token_key',$key)->select('userid')->first();
         $ratings = new Ratings();
-        $ratings->vendor_id = $req->vendor_id;
+        $ratings->vendor_id = $req->id;
         $ratings->customer_id = $customer->userid;
         $ratings->ratings =$req->ratings;
         $ratings->comment = $req->comment;
         $ratings->datetime = new Datetime();
         $ratings->save();
         return response()->json(['msg'=>'Your rating added.']);
+    }
+    public function getCategoryWiseFood($name, $id)
+    {
+            $foods=Food::where('vendor_id',$id)->where('category',$name)->get();
+            return response()->json(['foods'=>$foods]);
+        
+    }
+    public function checkForReview(Request $req)
+    {
+        $tk = $req->header("Authorization");
+        $data = Token::where('token_key',$tk)->first();
+        $check = Ratings::where('vendor_id',$req->id)->where('customer_id',$data->userid)->first();
+        if(empty($check->ratings)){
+            return response()->json(['check'=>0]);
+        }else{
+            return response()->json(['check'=>1]);
+        }
     }
 }

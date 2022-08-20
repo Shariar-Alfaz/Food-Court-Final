@@ -33,6 +33,8 @@ Route::group(['middleware'=>['apiCustomerAuth']],function(){
     Route::post('/customer/orderPlace',[CustomerApiController::class,'confirmOrder']);
     Route::any("/customer/logout",[CustomerApiController::class,'logout']);
     Route::post("/customer/restaurant/ratings",[CustomerApiController::class,"restaurantRating"]);
+    Route::get('/customer/category/{name}/{id}',[CustomerApiController::class,'getCategoryWiseFood']);
+    Route::get('/customer/ratings/check/{id}',[CustomerApiController::class,'checkForReview']);
 });
 Route::group(['middleware'=>['apiAdminAuth']],function(){
     Route::post('/admin/createAdmin',[AdminApiController::class,'createAdmin']);
