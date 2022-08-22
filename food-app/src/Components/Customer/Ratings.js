@@ -1,6 +1,6 @@
 const Ratings = ({data})=>{
     return(
-        <tr >
+        <tr key={data.id}>
             <td>
                 <strong>{data.customer.name}</strong>
                 <sup>{'(Ratings: '+data.ratings+')'}</sup>

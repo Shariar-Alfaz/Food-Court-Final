@@ -12,7 +12,7 @@ const Nav = ()=>{
                 <div>
                     <div className="topnav" id="myTopnav">
                         <a href="/customer/dashbord"><i className="fas fa-house-user"></i> Home</a>
-                        <a href="" className="show-cart"><i className="fas fa-cart-arrow-down"></i> Cart </a>
+                        <a href="/customer/cart" className="show-cart"><i className="fas fa-cart-arrow-down"></i> Cart </a>
                         <a href=""><i className="fas fa-list"></i> My orders</a>
                         <a href=""><i className="fas fa-user-alt-slash"></i> Logout</a>
                     </div>

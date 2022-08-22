@@ -1,6 +1,6 @@
-const FoodCard = ({data})=>{
+const FoodCard = ({data,handle})=>{
     return(
-        <div className='foodcard' style={{width:'550px'}}>
+        <div className='foodcard' style={{width:'550px'}} onClick={e=>handle(e,data)} key={data.id}>
                 <div>
                     <h4 className='item-name'>{data.name}</h4>
                     <p className='item-description'>{data.description}</p>

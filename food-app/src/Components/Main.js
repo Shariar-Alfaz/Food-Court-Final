@@ -5,6 +5,7 @@ import AdminCreate from './Admin/AdminCreate';
 import CustomerDashbord from './Customer/DashBord';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import CusRes from './Customer/RestaurantShow';
+import Cart from './Customer/Cart';
 const Main = ()=>{
     return (
         <div>
@@ -16,6 +17,7 @@ const Main = ()=>{
                     <Route path='/add/admin' element={<AdminCreate></AdminCreate>}/>
                     <Route path='/customer/dashbord' element={<CustomerDashbord></CustomerDashbord>}/>
                     <Route path='/customer/restaurant/:id' element={<CusRes></CusRes>}/>
+                    <Route path='/customer/cart' element={<Cart></Cart>}/>
                 </Routes>
             </BrowserRouter>
             

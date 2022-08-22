@@ -1,0 +1,148 @@
+#cart-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+#cart-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#cart-close {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    color: rgb(182, 182, 182);
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.4s;
+    font-weight: bolder;
+}
+
+#cart-close:hover {
+    color: black;
+}
+
+#restaurent-name {
+    padding: 0;
+    margin: 0;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    background-color: #E1306C;
+}
+
+td,
+th {
+    padding: 8px 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.remove-c-item:hover {
+    transform: scale(1.03);
+}
+
+.quantity-cart {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    text-align: center;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+.cart-food-image {
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+}
+
+.tableFlex {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 10px;
+}
+
+.c-food-name {
+    margin-top: 0;
+    font-weight: bolder;
+}
+
+.c-remove {
+    text-decoration: none;
+    color: #E1306C;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.calculation {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calculation table {
+    border-top: 1px solid black;
+    width: 100%;
+    max-width: 500px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+.corner {
+    float: right;
+    text-align: center;
+}
+
+#Clear,
+#confirm {
+    background: #E1306C;
+    color: white;
+    padding: 20px 60px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#Clear:hover,
+#confirm:hover {
+    transform: scale(1.03);
+}
+
+input[type="tel"] {
+    height: 30px;
+    width: 200px;
+    border: 2px solid #eee;
+    outline: none;
+    text-align: center;
+}
+
+input[type="address"] {
+    height: 30px;
+    width: 200px;
+    border: 2px solid #eee;
+    outline: none;
+    text-align: center;
+}

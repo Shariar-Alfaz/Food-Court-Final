@@ -69,7 +69,8 @@ class CustomerApiController extends Controller
     {
         $key=$req->header("Authorization");
         $token = Token::where("token_key",$key)->first();
-        return Customer::find($token->userid);
+        $cus = Customer::find($token->userid);
+        return response()->json(['customer'=>$cus]);
     }
     public function getCategory($id)
     {

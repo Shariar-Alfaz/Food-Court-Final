@@ -7,6 +7,8 @@ import './Css/Restaurant.css'
 import FoodCard from "./FoodCard";
 import './Css/FoodCard.css'
 import Ratings from "./Ratings";
+import AddToCartModal from "./AddToCartModal";
+import Notify from "./Notify";
 const RestaurantShow = () => {
     const { id } = useParams();
     const [restaurant, setRestaurant] = useState('');
@@ -17,6 +19,7 @@ const RestaurantShow = () => {
     const [inRating, setInrating] = useState('');
     const [comment, setComment] = useState('');
     const [rCheck, setRCheck] = useState(false);
+    const [modalFood,setModalFood] = useState('');
 
     useEffect(() => {
         Axios.get('/customer/restaurantsData/' + id).then((succ) => {
@@ -60,6 +63,11 @@ const RestaurantShow = () => {
                 alert('Input is not correct.');
             }
         });
+    }
+    const foodCardClick=(e,f)=>{
+        document.getElementById('modal').style.display = 'block';
+        setModalFood(f);
+        console.log(f);
     }
     return (
         <>
@@ -112,7 +120,7 @@ const RestaurantShow = () => {
                 <div className="flex">
                     {
                         foods.map((f) => (
-                            <FoodCard data={f} key={f.id} />
+                            <FoodCard data={f} handle={foodCardClick}/>
                         ))
                     }
                 </div>
@@ -124,7 +132,7 @@ const RestaurantShow = () => {
                     <tbody>
                         {
                             ratings.map((r) => (
-                                <Ratings data={r} key={r.id} />
+                                <Ratings data={r}/>
                             ))
                         }
                     </tbody>
@@ -148,6 +156,8 @@ const RestaurantShow = () => {
                 </div>
             </section>
             <br /><br />
+            <AddToCartModal data={modalFood}/>
+            <Notify/>
         </>
     )
 }
